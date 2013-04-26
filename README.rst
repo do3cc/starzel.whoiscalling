@@ -10,11 +10,11 @@ For this to work, it needs a bunch of configuration options. The script needs a 
 The configuration needs a main section.
 This is how a sample configuration could look like::
 
-[main]
-username = mybot@jabber.ccc.de
-password = xxx
-room = yourgroup@conference.jabber.ccc.de
-fritzbox = 192.168.1.1
+    [main]
+    username = mybot@jabber.ccc.de
+    password = xxx
+    room = yourgroup@conference.jabber.ccc.de
+    fritzbox = 192.168.1.1
 
 The egg exposes a script called `fritzbot`. The `fritzbot` script does not accept any parameters, and it blocks. If you want to run it in the background, start it with nohup.
 
