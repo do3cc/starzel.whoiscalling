@@ -13,9 +13,10 @@ setup(
     version = "0.0.1",
     author = "Patrick Gerken",
     author_email = "gerken@patrick-gerken.de",
-    description = ("Retrieve calling info from Fritzbox, Fritzbox activation with #96*5*"),
+    description = ("Retrieve calling info from Fritzbox, expose to jabber Multi User Chatroom"),
     license = "BSD",
-    keywords = "",
+    long_description=read('README.rst') + read('CHANGES.rst'),
+    keywords = "FRITZ!Box fritzbox jabber",
     packages=['starzel', 'starzel.whoiscalling'],
     install_requires = ['xmpppy', 'jabberbot'],
     entry_points = {
@@ -24,7 +25,8 @@ setup(
     },
     classifiers=[
         "Development Status :: 3 - Alpha",
-        "Topic :: Utilities",
         "License :: OSI Approved :: BSD License",
+        "Topic :: Communications :: Chat",
+        "Topic :: Communications :: Telephony"
     ],
 )
