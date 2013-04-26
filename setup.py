@@ -10,12 +10,13 @@ def read(fname):
 
 setup(
     name = "starzel.whoiscalling",
-    version = "0.0.1",
+    version='0.0.1a1.dev0',
     author = "Patrick Gerken",
     author_email = "gerken@patrick-gerken.de",
     description = ("Retrieve calling info from Fritzbox, expose to jabber Multi User Chatroom"),
     license = "BSD",
     long_description=read('README.rst') + read('CHANGES.rst'),
+    url='https://github.com/do3cc/starzel.whoiscalling',
     keywords = "FRITZ!Box fritzbox jabber",
     packages=['starzel', 'starzel.whoiscalling'],
     install_requires = ['xmpppy', 'jabberbot'],
