@@ -1,8 +1,8 @@
 HISTORY
 =======
 
-0.0.1a3 (unreleased)
---------------------
+0.0.2 (2013-04-26)
+------------------
 
 - First release on PyPI
   [do3cc]
