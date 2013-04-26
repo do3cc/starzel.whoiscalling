@@ -1,7 +1,7 @@
 HISTORY
 =======
 
-0.0.1a1 (unreleased)
+0.0.1a1 (2013-04-26)
 --------------------
 
 - Nothing changed yet.
