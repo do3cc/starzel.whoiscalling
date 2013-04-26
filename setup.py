@@ -10,7 +10,7 @@ def read(fname):
 
 setup(
     name = "starzel.whoiscalling",
-    version='0.0.1a1',
+    version='0.0.1a2.dev0',
     author = "Patrick Gerken",
     author_email = "gerken@patrick-gerken.de",
     description = ("Retrieve calling info from Fritzbox, expose to jabber Multi User Chatroom"),
