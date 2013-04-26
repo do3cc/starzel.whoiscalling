@@ -1,0 +1,5 @@
+recursive-include starzel *
+recursive-include docs *
+include *
+global-exclude *.pyc
+
