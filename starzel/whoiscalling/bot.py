@@ -1,10 +1,11 @@
+from datetime import datetime
 from jabberbot import JabberBot
 from telnetlib import Telnet
 import ConfigParser
 import logging
 import os
-import sys
 import re
+import sys
 
 only_number = re.compile('.*RING;\d*;(\d*);.*')
 
@@ -12,15 +13,27 @@ logging.basicConfig()
 
 
 def run(username, password, room, fritzbox):
+    logging.debug("Started at %s", datetime.now().isoformat())
     bot = JabberBot(username, password)
-    bot.join_room(room)
 
     telnet = Telnet(fritzbox, '1012')
 
     while True:
-        data = telnet.read_until('SIP0;')
+        # ugly, but seems to be the only way to stay on
+        bot.join_room(room)
+        logging.debug("Loop started at %s", datetime.now().isoformat())
+        data = telnet.read_until('SIP0;', 300)
         number = '\n'.join(only_number.findall(data))
-        bot.send(room, "Call from " + number, message_type='groupchat')
+        if number:
+            logging.debug("Sending a message at %s", datetime.now().isoformat())
+            bot.send(room, "Call from " + number, message_type='groupchat')
+        else:
+            what = bot.conn.Process(1)
+            if what != '0' and what != None:
+                logging.debug("What is this %s", what)
+            elif what == None:
+                logging.debug("Reconnecting")
+                bot.conn.reconnectAndReauth()
 
 def main():
     config = ConfigParser.ConfigParser()
